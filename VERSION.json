@@ -1,0 +1,14 @@
+﻿{
+  "version": "v1.2.4",
+  "date": "2026-06-29",
+  "name": "Vista final sin rotulos de wireframe",
+  "zip": "centro_cultural_v1.2.4_vista_final.zip",
+  "notes": [
+    "Mantiene paletas, marca, control Original/Intenso, contenido del informe y animaciones de v1.2.3.",
+    "Deja de activar la capa visual de wireframe y usa modo de previsualizacion final.",
+    "Retira rotulos tecnicos, etiquetas de imagen sugerida, avisos flotantes y encabezados de laboratorio.",
+    "Suaviza bordes, tarjetas y modulos interactivos para que se vean como interfaz finalizada.",
+    "Conserva el indicador de version para poder volver a entregas anteriores."
+  ]
+}
+
