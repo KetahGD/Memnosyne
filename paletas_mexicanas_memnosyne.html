@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paletas mexicanas | Memnosyne Mexico</title>
+  <style>
+    :root {
+      --paper: #f7efe2;
+      --ink: #211812;
+      --muted: #6e5a49;
+      --line: rgba(33, 24, 18, 0.16);
+      --shadow: rgba(33, 24, 18, 0.18);
+      --accent: #d36b2c;
+      --accent-2: #0f8f86;
+      --dark: #17110d;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(211, 107, 44, 0.18), transparent 24rem),
+        radial-gradient(circle at 88% 16%, rgba(15, 143, 134, 0.18), transparent 25rem),
+        linear-gradient(135deg, #fff8ed, var(--paper));
+      line-height: 1.55;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 239, 226, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: conic-gradient(from 130deg, #b83b22, #d6a646, #0f8f86, #17365e, #b83b22);
+      box-shadow: 0 12px 28px var(--shadow);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.55rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    .nav a:hover {
+      background: rgba(33, 24, 18, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.9fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.9rem;
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.04;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3.2rem, 8vw, 7.2rem);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 4.2rem);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 1.4rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-board {
+      position: relative;
+      min-height: 440px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(46, 31, 21, 0.82), rgba(5, 75, 79, 0.62)),
+        linear-gradient(135deg, #8a4b2a, #0b7285);
+      box-shadow: 0 28px 70px var(--shadow);
+    }
+
+    .hero-board::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, transparent 0 42%, rgba(255, 255, 255, 0.14) 42% 44%, transparent 44%),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 2px, transparent 2px 42px);
+      opacity: 0.8;
+    }
+
+    .pyramid {
+      position: absolute;
+      left: 8%;
+      bottom: 12%;
+      width: 42%;
+      aspect-ratio: 1.1;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 12px, transparent 12px 24px),
+        linear-gradient(135deg, #d38a2e, #6d3b1f);
+      filter: drop-shadow(0 22px 18px rgba(0, 0, 0, 0.28));
+    }
+
+    .cenote {
+      position: absolute;
+      right: 9%;
+      top: 13%;
+      width: 34%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 36%, #9ef1df, #14b8a6 34%, #073b4c 68%, #041b2d);
+      box-shadow: 0 0 0 16px rgba(255, 255, 255, 0.12), 0 24px 48px rgba(0, 0, 0, 0.22);
+    }
+
+    .motif {
+      position: absolute;
+      right: -4%;
+      bottom: -8%;
+      width: 42%;
+      aspect-ratio: 1;
+      background:
+        repeating-conic-gradient(from 45deg, #f2c166 0 10deg, #0f8f86 10deg 20deg, #b83b22 20deg 30deg, #17365e 30deg 40deg);
+      clip-path: polygon(50% 0, 62% 34%, 100% 34%, 69% 55%, 82% 94%, 50% 68%, 18% 94%, 31% 55%, 0 34%, 38% 34%);
+      opacity: 0.76;
+    }
+
+    .section {
+      padding: clamp(3.6rem, 7vw, 6rem) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .palette-card {
+      min-height: 450px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 252, 245, 0.72);
+      box-shadow: 0 18px 45px rgba(33, 24, 18, 0.08);
+    }
+
+    .palette-visual {
+      position: relative;
+      min-height: 190px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--c1), var(--c2), var(--c3));
+    }
+
+    .palette-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 22%, var(--c4), transparent 18%),
+        radial-gradient(circle at 22% 76%, var(--c5), transparent 18%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 18px);
+      mix-blend-mode: soft-light;
+    }
+
+    .palette-visual::after {
+      content: "";
+      position: absolute;
+      left: 10%;
+      bottom: 13%;
+      width: 45%;
+      height: 42%;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      background: color-mix(in srgb, var(--c6) 70%, white);
+      opacity: 0.72;
+    }
+
+    .palette-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.2rem;
+    }
+
+    .palette-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .palette-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .swatches {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: auto;
+    }
+
+    .swatch {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.45rem;
+      border: 1px solid rgba(33, 24, 18, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.46);
+      font-family: Arial, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+    }
+
+    .copy {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.35rem 0.6rem;
+      color: white;
+      background: var(--dark);
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .preview {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: 0 22px 58px rgba(33, 24, 18, 0.1);
+    }
+
+    .preview-panel {
+      min-height: 430px;
+      padding: clamp(1.5rem, 4vw, 3.2rem);
+      background: linear-gradient(135deg, var(--tone-a), var(--tone-b));
+      color: var(--copy);
+    }
+
+    .preview-panel h3 {
+      max-width: 9ch;
+      margin-top: 0.65rem;
+      font-size: clamp(2.4rem, 5vw, 5.8rem);
+    }
+
+    .preview-panel p {
+      max-width: 430px;
+    }
+
+    .preview-panel .mini-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 1rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      color: var(--button-copy);
+      background: var(--button);
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .preview-image {
+      position: relative;
+      min-height: 430px;
+      background:
+        radial-gradient(circle at 68% 28%, var(--glow), transparent 16rem),
+        linear-gradient(135deg, var(--image-a), var(--image-b));
+      overflow: hidden;
+    }
+
+    .preview-image::before,
+    .preview-image::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+    }
+
+    .preview-image::before {
+      left: 13%;
+      bottom: 15%;
+      width: 52%;
+      height: 42%;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0 12px, transparent 12px 24px),
+        var(--shape);
+    }
+
+    .preview-image::after {
+      right: -6%;
+      top: -8%;
+      width: 52%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: repeating-conic-gradient(var(--pattern) 0 12deg, transparent 12deg 24deg);
+      opacity: 0.65;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .note {
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 252, 245, 0.72);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      z-index: 40;
+      transform: translateX(-50%) translateY(130%);
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      color: white;
+      background: #17110d;
+      box-shadow: 0 18px 40px var(--shadow);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 900;
+      transition: transform 0.24s ease;
+    }
+
+    .toast.is-visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .preview {
+        grid-template-columns: 1fr;
+      }
+
+      .palette-grid,
+      .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-board {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .palette-grid,
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-panel,
+      .preview-image {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">MM</span>
+        <span><small>Memnosyne</small>Mexico</span>
+      </div>
+      <nav class="nav" aria-label="Secciones del tablero">
+        <a href="#paletas">Paletas</a>
+        <a href="#aplicacion">Aplicacion</a>
+        <a href="#criterios">Criterios</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero">
+      <div>
+        <p class="eyebrow">Exploracion cromatica</p>
+        <h1>Paletas mexicanas respetuosas</h1>
+        <p class="lead">Propuestas de color para que el sitio capte la atencion a primera vista sin caer en una mezcla generica. Tolteca se acerca a tierra, cantera, ocres y fuego; Maya toma cenotes, selva, jade, turquesa y humedad tropical.</p>
+      </div>
+      <div class="hero-board" aria-label="Composicion grafica inspirada en piramide, cenote y patron textil">
+        <div class="pyramid"></div>
+        <div class="cenote"></div>
+        <div class="motif"></div>
+      </div>
+    </section>
+
+    <section id="paletas" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Recomendaciones</p>
+            <h2>Seis rutas de color</h2>
+          </div>
+          <p>La idea es conservar una base editorial clara, pero dar mas energia visual desde el primer pantallazo. Cada paleta tiene un uso sugerido para no mezclar simbolos de forma arbitraria.</p>
+        </div>
+
+        <div class="palette-grid">
+          <article class="palette-card" style="--c1:#2B1A12;--c2:#6D3B1F;--c3:#D38A2E;--c4:#F2C166;--c5:#A65F2B;--c6:#F6EBD7;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Tolteca</span><span>Tierra seca</span></div>
+              <h3>Cantera y Sol</h3>
+              <p>Para secciones toltecas: piramide, piedra, sol, juego de pelota y clima seco del Valle de Teotihuacan.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#2B1A12"></span><span>Obsidiana tierra</span><button class="copy" data-copy="#2B1A12">#2B1A12</button></div>
+                <div class="swatch"><span class="dot" style="--color:#6D3B1F"></span><span>Barro profundo</span><button class="copy" data-copy="#6D3B1F">#6D3B1F</button></div>
+                <div class="swatch"><span class="dot" style="--color:#A65F2B"></span><span>Cantera</span><button class="copy" data-copy="#A65F2B">#A65F2B</button></div>
+                <div class="swatch"><span class="dot" style="--color:#D38A2E"></span><span>Ocre solar</span><button class="copy" data-copy="#D38A2E">#D38A2E</button></div>
+                <div class="swatch"><span class="dot" style="--color:#F2C166"></span><span>Maiz claro</span><button class="copy" data-copy="#F2C166">#F2C166</button></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-card" style="--c1:#24110D;--c2:#7A2E1D;--c3:#C84B28;--c4:#E98D36;--c5:#D6A646;--c6:#F7E2B8;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Tolteca</span><span>Fuego ritual</span></div>
+              <h3>Atardecer Teotihuacano</h3>
+              <p>Mas dramatico y llamativo. Funciona para heroes, CTA y momentos ceremoniales donde se quiere impacto inmediato.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#24110D"></span><span>Sombra ritual</span><button class="copy" data-copy="#24110D">#24110D</button></div>
+                <div class="swatch"><span class="dot" style="--color:#7A2E1D"></span><span>Adobe oscuro</span><button class="copy" data-copy="#7A2E1D">#7A2E1D</button></div>
+                <div class="swatch"><span class="dot" style="--color:#C84B28"></span><span>Rojo tezontle</span><button class="copy" data-copy="#C84B28">#C84B28</button></div>
+                <div class="swatch"><span class="dot" style="--color:#E98D36"></span><span>Naranja fuego</span><button class="copy" data-copy="#E98D36">#E98D36</button></div>
+                <div class="swatch"><span class="dot" style="--color:#D6A646"></span><span>Dorado maiz</span><button class="copy" data-copy="#D6A646">#D6A646</button></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-card" style="--c1:#041B2D;--c2:#073B4C;--c3:#0B7285;--c4:#14B8A6;--c5:#88D498;--c6:#FFF3D6;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Maya</span><span>Cenote</span></div>
+              <h3>Cenote y Jade</h3>
+              <p>Para cultura maya: agua, selva, piedra humeda, jade, medicina tradicional y clima tropical.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#041B2D"></span><span>Noche cenote</span><button class="copy" data-copy="#041B2D">#041B2D</button></div>
+                <div class="swatch"><span class="dot" style="--color:#073B4C"></span><span>Azul profundo</span><button class="copy" data-copy="#073B4C">#073B4C</button></div>
+                <div class="swatch"><span class="dot" style="--color:#0B7285"></span><span>Agua mineral</span><button class="copy" data-copy="#0B7285">#0B7285</button></div>
+                <div class="swatch"><span class="dot" style="--color:#14B8A6"></span><span>Turquesa vivo</span><button class="copy" data-copy="#14B8A6">#14B8A6</button></div>
+                <div class="swatch"><span class="dot" style="--color:#88D498"></span><span>Jade hoja</span><button class="copy" data-copy="#88D498">#88D498</button></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-card" style="--c1:#052E2B;--c2:#096B5E;--c3:#00A896;--c4:#2DD4BF;--c5:#B7D36B;--c6:#F5E7B2;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Maya</span><span>Selva</span></div>
+              <h3>Selva Masewal</h3>
+              <p>Mas verde y vegetal. Recomendable para salud comunitaria, herbolaria, buen vivir y defensa territorial.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#052E2B"></span><span>Selva sombra</span><button class="copy" data-copy="#052E2B">#052E2B</button></div>
+                <div class="swatch"><span class="dot" style="--color:#096B5E"></span><span>Ceiba profunda</span><button class="copy" data-copy="#096B5E">#096B5E</button></div>
+                <div class="swatch"><span class="dot" style="--color:#00A896"></span><span>Verde agua</span><button class="copy" data-copy="#00A896">#00A896</button></div>
+                <div class="swatch"><span class="dot" style="--color:#2DD4BF"></span><span>Turquesa planta</span><button class="copy" data-copy="#2DD4BF">#2DD4BF</button></div>
+                <div class="swatch"><span class="dot" style="--color:#B7D36B"></span><span>Hoja luminosa</span><button class="copy" data-copy="#B7D36B">#B7D36B</button></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-card" style="--c1:#17110D;--c2:#8A4B2A;--c3:#D6A646;--c4:#17876D;--c5:#0A6B63;--c6:#F7ECD5;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Global</span><span>Puente</span></div>
+              <h3>Maiz y Jade</h3>
+              <p>Mi recomendacion central: une territorio seco y tropical sin borrar sus diferencias. Ideal para Inicio y Fundacion.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#17110D"></span><span>Obsidiana base</span><button class="copy" data-copy="#17110D">#17110D</button></div>
+                <div class="swatch"><span class="dot" style="--color:#8A4B2A"></span><span>Tierra puente</span><button class="copy" data-copy="#8A4B2A">#8A4B2A</button></div>
+                <div class="swatch"><span class="dot" style="--color:#D6A646"></span><span>Maiz ceremonial</span><button class="copy" data-copy="#D6A646">#D6A646</button></div>
+                <div class="swatch"><span class="dot" style="--color:#17876D"></span><span>Frog / ceiba</span><button class="copy" data-copy="#17876D">#17876D</button></div>
+                <div class="swatch"><span class="dot" style="--color:#0A6B63"></span><span>Jade profundo</span><button class="copy" data-copy="#0A6B63">#0A6B63</button></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="palette-card" style="--c1:#10151F;--c2:#17365E;--c3:#355070;--c4:#C84B28;--c5:#E9B44C;--c6:#F1E8D8;">
+            <div class="palette-visual"></div>
+            <div class="palette-body">
+              <div class="palette-meta"><span>Editorial</span><span>Noche</span></div>
+              <h3>Noche Ceremonial</h3>
+              <p>Opcion mas sofisticada para secciones de introduccion: azul profundo, indigo, fuego y maiz como acento.</p>
+              <div class="swatches">
+                <div class="swatch"><span class="dot" style="--color:#10151F"></span><span>Noche obsidiana</span><button class="copy" data-copy="#10151F">#10151F</button></div>
+                <div class="swatch"><span class="dot" style="--color:#17365E"></span><span>Azul profundo</span><button class="copy" data-copy="#17365E">#17365E</button></div>
+                <div class="swatch"><span class="dot" style="--color:#355070"></span><span>Indigo textil</span><button class="copy" data-copy="#355070">#355070</button></div>
+                <div class="swatch"><span class="dot" style="--color:#C84B28"></span><span>Fuego contenido</span><button class="copy" data-copy="#C84B28">#C84B28</button></div>
+                <div class="swatch"><span class="dot" style="--color:#E9B44C"></span><span>Maiz luz</span><button class="copy" data-copy="#E9B44C">#E9B44C</button></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aplicacion" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Aplicacion sugerida</p>
+            <h2>Dos territorios, una red</h2>
+          </div>
+          <p>La clave es que cada cultura tenga identidad propia: Tolteca seco, piedra y sol; Maya tropical, agua y selva. La marca global puede unirlas con maiz, obsidiana e indigo.</p>
+        </div>
+
+        <div class="preview">
+          <div class="preview-panel" style="--tone-a:#2B1A12;--tone-b:#A65F2B;--copy:#FFF8EA;--button:#D6A646;--button-copy:#211812;">
+            <p class="eyebrow">Tolteca / tierra y fuego</p>
+            <h3>Piedra, sol y Tlashko</h3>
+            <p>Tonos recomendados: barro, cantera, ocre, maiz y obsidiana. Se sienten secos, ceremoniales y cercanos a Teotihuacan.</p>
+            <span class="mini-button">Hero Tolteca</span>
+          </div>
+          <div class="preview-image" style="--image-a:#6D3B1F;--image-b:#D38A2E;--glow:#F2C166;--shape:#8A4B2A;--pattern:#F2C166;"></div>
+        </div>
+
+        <div class="preview" style="margin-top:1rem">
+          <div class="preview-panel" style="--tone-a:#041B2D;--tone-b:#0B7285;--copy:#F4FFFB;--button:#88D498;--button-copy:#041B2D;">
+            <p class="eyebrow">Maya / agua y selva</p>
+            <h3>Cenote, jade y ceiba</h3>
+            <p>Tonos recomendados: azul cenote, turquesa, verde hoja, jade y hueso calido. Se sienten tropicales, vivos y relacionados con memoria, medicina y territorio.</p>
+            <span class="mini-button">Hero Maya</span>
+          </div>
+          <div class="preview-image" style="--image-a:#073B4C;--image-b:#14B8A6;--glow:#88D498;--shape:#0B7285;--pattern:#2DD4BF;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="criterios" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Criterios</p>
+            <h2>Como hacerlo mas atractivo</h2>
+          </div>
+          <p>Estas notas responden a los comentarios recibidos: llamar la atencion desde el primer pantallazo y evitar que las imagenes parezcan genericas o artificiales.</p>
+        </div>
+
+        <div class="notes-grid">
+          <article class="note">
+            <strong>Separar territorios</strong>
+            <p>No usar una sola paleta para todo. Tolteca debe sentirse seco, mineral y solar; Maya debe sentirse humedo, vegetal y acuatico.</p>
+          </article>
+          <article class="note">
+            <strong>Primer impacto</strong>
+            <p>Usar contraste fuerte en el hero: fondo oscuro, color vivo de acento, imagen documental y una composicion con piramide/cenote/patron.</p>
+          </article>
+          <article class="note">
+            <strong>Imagenes reales</strong>
+            <p>Priorizar fotografia documental propia o proporcionada. Evitar imagenes demasiado perfectas, plasticas o con apariencia de IA.</p>
+          </article>
+          <article class="note">
+            <strong>Elementos culturales</strong>
+            <p>Usar piramide, cancha, piedra, maiz y obsidiana para Tolteca; cenote, ceiba, selva, jade, tejido y plantas para Maya.</p>
+          </article>
+          <article class="note">
+            <strong>Color de acento</strong>
+            <p>Para botones, usar maiz/dorado en fondos oscuros y turquesa o jade en fondos calidos. Eso ayuda a dirigir la mirada.</p>
+          </article>
+          <article class="note">
+            <strong>Recomendacion final</strong>
+            <p>Usaria Maiz y Jade como paleta global, Cantera y Sol para Tolteca, y Cenote y Jade para Maya.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite">Color copiado</div>
+
+  <script>
+    const toast = document.querySelector(".toast");
+
+    document.querySelectorAll(".copy").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const value = button.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(value);
+        } catch {
+          const input = document.createElement("input");
+          input.value = value;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+
+        toast.textContent = `${value} copiado`;
+        toast.classList.add("is-visible");
+        window.clearTimeout(window.paletteToastTimer);
+        window.paletteToastTimer = window.setTimeout(() => {
+          toast.classList.remove("is-visible");
+        }, 1600);
+      });
+    });
+  </script>
+</body>
+</html>
