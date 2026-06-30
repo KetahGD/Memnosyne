@@ -26,7 +26,7 @@ Sitio HTML/CSS para presentar la red cultural entre Memnosyne Institute, el Cent
 
 ## Version
 
-La version actual es `v1.2.6`. El indicador visible se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
+La version actual es `v1.2.7`. El indicador visible se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
 
 Cada cambio nuevo debe:
 
@@ -73,7 +73,7 @@ La version `v1.2.2` mantiene HTML, CSS y JavaScript ligero. Incluye:
 
 ## Contenido de previsualizacion
 
-La version `v1.2.6` mantiene los datos del informe y presenta el Inicio con imagenes ceremoniales locales, sin rotulos visibles de wireframe ni superposiciones en los controles flotantes:
+La version `v1.2.7` mantiene los datos del informe y presenta el Inicio con la imagen ceremonial correcta, sin rotulos visibles de wireframe ni superposiciones en los controles flotantes:
 
 - Inicio: red translocal y narrativa "dos territorios, una red viva".
 - Fundacion: Memnosyne, Tolteca y U Kuuchil como ecosistema conectado.

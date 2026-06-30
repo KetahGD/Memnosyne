@@ -1,6 +1,6 @@
 const siteVersion = {
-  version: "v1.2.6",
-  label: "Inicio visual",
+  version: "v1.2.7",
+  label: "Imagen correcta",
 };
 
 function renderVersionBadge() {

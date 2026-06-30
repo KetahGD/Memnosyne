@@ -1,5 +1,18 @@
 ﻿# Changelog
 
+## v1.2.7 - 2026-06-29
+
+Imagen correcta en Inicio.
+
+- Reemplaza la imagen principal de danza en el hero por la fotografia correcta.
+- Mantiene el bloque visual inicial con danza y retrato ceremonial.
+- Conserva la estructura, paletas, animaciones y navegacion de `v1.2.6`.
+- Genera un nuevo ZIP con el asset actualizado.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.7_inicio_imagen_correcta.zip`
+
 ## v1.2.6 - 2026-06-29
 
 Imagenes principales en Inicio.
