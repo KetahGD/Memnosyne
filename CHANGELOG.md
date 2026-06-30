@@ -1,5 +1,18 @@
 ﻿# Changelog
 
+## v1.2.6 - 2026-06-29
+
+Imagenes principales en Inicio.
+
+- Agrega las imagenes proporcionadas como assets locales dentro de `assets/`.
+- Usa la imagen de danza ceremonial como fondo principal del hero de Inicio.
+- Agrega una franja visual inmediatamente despues del hero con danza y retrato ceremonial.
+- Mantiene la brujula de red, rutas de navegacion, paletas y correcciones visuales de `v1.2.5`.
+- Genera un nuevo ZIP con los assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.6_inicio_visual.zip`
 ## v1.2.5 - 2026-06-29
 
 Correccion de bugs visuales.
@@ -145,6 +158,7 @@ Archivo comprimido asociado:
 - Cada cambio nuevo debe incrementar la version.
 - Cada entrega debe generar un ZIP con el numero de version en el nombre.
 - Para volver a una version anterior, usar el ZIP correspondiente.
+
 
 
 

@@ -1,14 +1,14 @@
 ﻿{
-  "version": "v1.2.5",
+  "version": "v1.2.6",
   "date": "2026-06-29",
-  "name": "Correccion de bugs visuales",
-  "zip": "centro_cultural_v1.2.5_ajustes_visuales.zip",
+  "name": "Imagenes principales en Inicio",
+  "zip": "centro_cultural_v1.2.6_inicio_visual.zip",
   "notes": [
-    "Corrige el organigrama de Fundacion para que las lineas queden detras de las tarjetas.",
-    "Compacta el panel de paleta para que no tape tablas ni contenido.",
-    "Mueve el indicador de version a una posicion menos invasiva.",
-    "Mejora la tabla comparativa para evitar cortes y desbordes.",
-    "Corrige textos con codificacion visible y mantiene las paletas actuales."
+    "Agrega las imagenes proporcionadas al Inicio como recursos locales.",
+    "Usa la danza ceremonial como imagen principal del hero.",
+    "Agrega una franja visual inicial con la imagen de danza y el retrato ceremonial.",
+    "Mantiene la navegacion, paletas, modo Original/Intenso y correcciones visuales previas.",
+    "Incluye los assets dentro del proyecto y del ZIP."
   ]
 }
 

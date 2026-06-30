@@ -187,6 +187,12 @@ function renderHomeCompass(sectionKey) {
     </div>
   </section>`);
 
+  const photoIntro = document.querySelector(".home-photo-intro");
+  if (photoIntro && photoIntro.parentElement) {
+    photoIntro.parentElement.insertBefore(compass, photoIntro.nextSibling);
+    return;
+  }
+
   insertAfterHero(compass);
 }
 
