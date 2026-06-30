@@ -1,6 +1,6 @@
 ﻿# Sugerencias de interaccion creativa
 
-Version: v1.2.4
+Version: v1.2.5
 
 ## Implementado en la vista interactiva
 
@@ -36,6 +36,7 @@ Version: v1.2.4
 3. Modo relato para Tolteca y Maya.
 4. Donativo transparente.
 5. Explorador de territorio para Inicio.
+
 
 
 

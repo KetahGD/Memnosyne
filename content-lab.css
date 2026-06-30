@@ -622,10 +622,93 @@ body.final-page-mode .wf-ceremony-ring div {
 
 body.final-page-mode .palette-control {
   border: 1px solid var(--line);
+  right: 0;
+  bottom: 24px;
+  width: min(282px, calc(100vw - 28px));
+  padding-left: 52px;
+  border-radius: 18px 0 0 18px;
+  transform: translateX(calc(100% - 46px));
+  transition: transform .24s ease, box-shadow .24s ease, opacity .24s ease;
+  opacity: .92;
+}
+
+body.final-page-mode .palette-control::before {
+  content: "COLOR";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  color: var(--cafe);
+}
+
+body.final-page-mode .palette-control:hover,
+body.final-page-mode .palette-control:focus-within {
+  transform: translateX(0);
+  opacity: 1;
+  box-shadow: 0 24px 62px var(--shadow);
 }
 
 body.final-page-mode .palette-name,
 body.final-page-mode .palette-control-label,
 body.final-page-mode .version-badge {
   border-style: solid;
+}
+
+body.final-page-mode .version-badge {
+  top: auto;
+  left: 14px;
+  bottom: 14px;
+  z-index: 120;
+  pointer-events: none;
+  opacity: .88;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow) 72%, transparent);
+}
+
+body.final-page-mode .bridge-network {
+  overflow: hidden;
+}
+
+body.final-page-mode .bridge-line {
+  z-index: 1;
+  opacity: .42;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--dorado), transparent 42%));
+}
+
+body.final-page-mode .bridge-node {
+  z-index: 2;
+}
+
+body.final-page-mode .trust-table {
+  overflow-x: auto;
+  padding-bottom: .35rem;
+}
+
+body.final-page-mode .trust-table > div {
+  min-width: min(900px, 100%);
+}
+
+@media (max-width: 760px) {
+  body.final-page-mode .palette-control {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+    padding-left: 12px;
+    border-radius: 18px;
+    transform: none;
+  }
+
+  body.final-page-mode .palette-control::before {
+    display: none;
+  }
+
+  body.final-page-mode .version-badge {
+    top: auto;
+    bottom: 112px;
+    left: 10px;
+  }
 }

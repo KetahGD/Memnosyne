@@ -524,10 +524,11 @@ body:not(.tolteca-theme):not(.maya-theme) .route-card.is-visible {
 .bridge-line {
   position: absolute;
   z-index: 1;
-  height: 3px;
+  height: 2px;
   transform-origin: left center;
   background: linear-gradient(90deg, var(--tolteca), var(--maya), var(--dorado));
   animation: drawThread 1.25s ease both;
+  pointer-events: none;
 }
 
 .compass-thread {
@@ -541,11 +542,14 @@ body:not(.tolteca-theme):not(.maya-theme) .route-card.is-visible {
   min-height: 380px;
   border: 1px dashed var(--line);
   border-radius: 8px;
+  isolation: isolate;
+  overflow: hidden;
   background: color-mix(in srgb, var(--hueso), var(--accent2) 6%);
 }
 
 .bridge-node {
   position: absolute;
+  z-index: 2;
   width: min(260px, 38%);
 }
 
@@ -566,17 +570,17 @@ body:not(.tolteca-theme):not(.maya-theme) .route-card.is-visible {
 }
 
 .bridge-line-left {
-  left: 28%;
-  top: 52%;
-  width: 28%;
-  transform: rotate(-28deg);
+  left: 30%;
+  top: 51%;
+  width: 25%;
+  transform: rotate(-25deg);
 }
 
 .bridge-line-right {
-  left: 51%;
-  top: 52%;
-  width: 28%;
-  transform: rotate(28deg);
+  left: 50%;
+  top: 51%;
+  width: 27%;
+  transform: rotate(25deg);
   animation-delay: 0.2s;
 }
 
@@ -588,16 +592,18 @@ body:not(.tolteca-theme):not(.maya-theme) .route-card.is-visible {
 
 .trust-table > div {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(130px, .85fr) minmax(150px, .9fr) minmax(210px, 1.2fr) minmax(190px, 1fr);
   gap: 0.45rem;
 }
 
 .trust-table b,
 .trust-table span {
+  min-width: 0;
   padding: 0.8rem;
   border: 1px dashed var(--line);
   border-radius: 8px;
   background: color-mix(in srgb, var(--hueso), var(--accent) 5%);
+  overflow-wrap: anywhere;
 }
 
 .tolteca-court .court-layout {

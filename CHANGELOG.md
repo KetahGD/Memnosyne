@@ -1,5 +1,18 @@
 ﻿# Changelog
 
+## v1.2.5 - 2026-06-29
+
+Correccion de bugs visuales.
+
+- Corrige el organigrama de Fundacion: las lineas quedan detras de las tarjetas y con menor interferencia visual.
+- Compacta el panel flotante de paleta para que no tape tablas, modulos ni contenido principal.
+- Reubica el indicador de version en una esquina menos invasiva.
+- Ajusta la tabla comparativa para mejorar cortes de texto, ancho minimo y scroll horizontal seguro.
+- Limpia textos con codificacion visible y valida sintaxis de JavaScript.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.5_ajustes_visuales.zip`
 ## v1.2.4 - 2026-06-29
 
 Vista final sin rotulos de wireframe.
@@ -132,5 +145,6 @@ Archivo comprimido asociado:
 - Cada cambio nuevo debe incrementar la version.
 - Cada entrega debe generar un ZIP con el numero de version en el nombre.
 - Para volver a una version anterior, usar el ZIP correspondiente.
+
 
 

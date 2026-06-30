@@ -1,6 +1,6 @@
 const siteVersion = {
-  version: "v1.2.4",
-  label: "Vista final",
+  version: "v1.2.5",
+  label: "Ajustes visuales",
 };
 
 function renderVersionBadge() {

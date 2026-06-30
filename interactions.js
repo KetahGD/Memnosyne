@@ -1,4 +1,4 @@
-const sectionProfiles = {
+﻿const sectionProfiles = {
   home: {
     label: "Inicio",
     title: "Recorrido de la red viva",
@@ -247,7 +247,7 @@ function renderMayaWeave(sectionKey) {
       <div class="weave-grid">
         <article><span>Comunidad</span><b>Buen vivir</b><p>Vida digna, encuentro intergeneracional y territorio.</p></article>
         <article><span>Salud</span><b>Herbolaria</b><p>Medicina tradicional y plantas que nos cuidan.</p></article>
-        <article><span>Educacion</span><b>Escuelita Maya</b><p>Trabajo formativo con niñas, niños y juventudes.</p></article>
+        <article><span>Educacion</span><b>Escuelita Maya</b><p>Trabajo formativo con ninas, ninos y juventudes.</p></article>
         <article><span>Arte</span><b>Reflejos</b><p>Fotografia comunitaria, literatura, cine y memoria visual.</p></article>
       </div>
       <div class="palapa-programs"><span>Centro</span><i>Salud</i><i>Escuela</i><i>Arte</i><i>Memoria</i></div>
@@ -574,3 +574,4 @@ function initInteractions() {
 }
 
 initInteractions();
+
