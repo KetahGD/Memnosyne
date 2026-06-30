@@ -1,6 +1,6 @@
-# Memnosyne México - sitio estatico
+# Memnosyne Mexico - sitio estatico
 
-Sitio HTML/CSS para presentar Memnosyne México como red cultural entre Memnosyne Institute, el Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.
+Sitio HTML/CSS para presentar Memnosyne Mexico como red cultural entre Memnosyne Institute, el Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.
 
 ## Estructura
 
@@ -22,11 +22,12 @@ Sitio HTML/CSS para presentar Memnosyne México como red cultural entre Memnosyn
 - `CHANGELOG.md`: historial de cambios y zips asociados.
 - `version.js`: selector visible entre vista final y wireframe.
 - `SUGERENCIAS_INTERACCION.md`: ideas de interaccion para futuras iteraciones.
+- `DOCUMENTACION_PROYECTO_MEMNOSYNE_MEXICO.md`: resumen del proceso, layout, versiones, recursos y roles.
 - `assets/`: imagenes locales usadas en Inicio.
 
 ## Version
 
-La version actual es `v1.2.12`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
+La version actual es `v1.2.13`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
 
 Cada cambio nuevo debe:
 

@@ -1,10 +1,23 @@
 # Changelog
 
+## v1.2.13 - 2026-06-30
+
+Documentacion del proyecto.
+
+- Agrega `DOCUMENTACION_PROYECTO_MEMNOSYNE_MEXICO.md`.
+- Resume layout, versiones, recursos, imagenes, tipografias, roles y operacion.
+- Documenta hosting, dominio, mantenimiento, administracion y versionamiento con Git/GitHub.
+- Actualiza cache busting a `v1.2.13`.
+- Genera un nuevo ZIP con documentacion y assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.13_documentacion_proyecto.zip`
 ## v1.2.12 - 2026-06-30
 
-Nombre Memnosyne México.
+Nombre Memnosyne Mexico.
 
-- Cambia el nombre visible del sitio a `Memnosyne México`.
+- Cambia el nombre visible del sitio a `Memnosyne Mexico`.
 - Actualiza titles del navegador, navbar, hero de inicio y footer.
 - Mantiene Tolteca, Maya, Proyectos y Donativo como apartados internos.
 - Actualiza cache busting a `v1.2.12`.

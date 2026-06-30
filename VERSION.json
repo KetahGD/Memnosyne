@@ -1,14 +1,14 @@
 {
-  "version": "v1.2.12",
+  "version": "v1.2.13",
   "date": "2026-06-30",
-  "name": "Nombre Memnosyne México",
-  "zip": "centro_cultural_v1.2.12_memnosyne_mexico.zip",
+  "name": "Documentacion del proyecto",
+  "zip": "centro_cultural_v1.2.13_documentacion_proyecto.zip",
   "notes": [
-    "Cambia el nombre visible del sitio a Memnosyne México.",
-    "Actualiza titles del navegador, navbar, hero de inicio y footer.",
-    "Mantiene los nombres de Tolteca, Maya, Proyectos y Donativo como apartados internos.",
-    "Actualiza cache busting a v1.2.12.",
-    "Incluye todos los assets dentro del proyecto y del ZIP."
+    "Agrega DOCUMENTACION_PROYECTO_MEMNOSYNE_MEXICO.md.",
+    "Resume layout, versiones, recursos, imagenes, tipografias, roles y operacion.",
+    "Documenta hosting, dominio, mantenimiento, administracion y versionamiento con Git/GitHub.",
+    "Actualiza cache busting a v1.2.13.",
+    "Incluye todos los assets y la documentacion dentro del ZIP."
   ]
 }
 
