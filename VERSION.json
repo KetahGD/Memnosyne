@@ -1,14 +1,13 @@
-﻿{
-  "version": "v1.2.11",
+{
+  "version": "v1.2.12",
   "date": "2026-06-30",
-  "name": "Responsive y vistas final/wireframe",
-  "zip": "centro_cultural_v1.2.11_responsive_vistas.zip",
+  "name": "Nombre Memnosyne México",
+  "zip": "centro_cultural_v1.2.12_memnosyne_mexico.zip",
   "notes": [
-    "Mejora el responsive de heroes, tarjetas, tablas, matriz de ejes y modulos interactivos.",
-    "Retira las senalizaciones visibles de paleta, color y version flotante.",
-    "Conserva las paletas fijas por apartado sin selector cromatico visible.",
-    "Agrega un unico selector para alternar entre Vista final y Wireframe.",
-    "Mantiene datos e imagenes en Vista final y placeholders visuales en Wireframe.",
+    "Cambia el nombre visible del sitio a Memnosyne México.",
+    "Actualiza titles del navegador, navbar, hero de inicio y footer.",
+    "Mantiene los nombres de Tolteca, Maya, Proyectos y Donativo como apartados internos.",
+    "Actualiza cache busting a v1.2.12.",
     "Incluye todos los assets dentro del proyecto y del ZIP."
   ]
 }

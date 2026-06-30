@@ -1,6 +1,6 @@
-﻿# Memoria Viva - sitio estatico
+# Memnosyne México - sitio estatico
 
-Sitio HTML/CSS para presentar la red cultural entre Memnosyne Institute, el Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.
+Sitio HTML/CSS para presentar Memnosyne México como red cultural entre Memnosyne Institute, el Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.
 
 ## Estructura
 
@@ -26,7 +26,7 @@ Sitio HTML/CSS para presentar la red cultural entre Memnosyne Institute, el Cent
 
 ## Version
 
-La version actual es `v1.2.11`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
+La version actual es `v1.2.12`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
 
 Cada cambio nuevo debe:
 

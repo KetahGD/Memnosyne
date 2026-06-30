@@ -1,6 +1,6 @@
 const siteVersion = {
-  version: "v1.2.11",
-  label: "Responsive y vistas",
+  version: "v1.2.12",
+  label: "Nombre Memnosyne México",
 };
 
 const viewModeStorageKey = "memoria-viva-view-mode";

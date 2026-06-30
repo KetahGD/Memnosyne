@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.2.12 - 2026-06-30
+
+Nombre Memnosyne México.
+
+- Cambia el nombre visible del sitio a `Memnosyne México`.
+- Actualiza titles del navegador, navbar, hero de inicio y footer.
+- Mantiene Tolteca, Maya, Proyectos y Donativo como apartados internos.
+- Actualiza cache busting a `v1.2.12`.
+- Genera un nuevo ZIP con todos los assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.12_memnosyne_mexico.zip`
 ## v1.2.11 - 2026-06-30
 
 Responsive y vistas final/wireframe.

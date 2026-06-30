@@ -3,9 +3,9 @@
     media: ["Piedra, selva y red viva", "Memoria territorial en movimiento"],
     hero: {
       eyebrow: "Dos territorios - una red viva",
-      title: "Memoria viva entre Teotihuacan y la zona maya",
+      title: "Memnosyne México",
       text:
-        "Propuesta digital para presentar un ecosistema translocal formado por Memnosyne Institute, Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.",
+        "Página digital para presentar un ecosistema translocal formado por Memnosyne Institute, Centro Cultural Tolteca de Teotihuacan AC y el Centro Comunitario U Kuuchil K Ch'ilbalo'on.",
       buttons: ["Explorar la red", "Ver recorrido"],
     },
     routeTitle: "Una arquitectura visual para tres entidades conectadas",
@@ -251,7 +251,7 @@ function populateExistingSections() {
 }
 
 function populateFooter() {
-  setText(".footer h3", "Memoria Viva");
+  setText(".footer h3", "Memnosyne México");
   const footerParagraph = document.querySelector(".footer p");
   if (footerParagraph) {
     footerParagraph.textContent =
