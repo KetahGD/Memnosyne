@@ -1,5 +1,19 @@
 ﻿# Changelog
 
+## v1.2.8 - 2026-06-29
+
+Imagenes visibles en Fundacion.
+
+- Coloca las imagenes locales tambien en la pagina de Fundacion.
+- Usa la danza ceremonial como fondo principal del hero de Fundacion.
+- Agrega una franja visual inicial con danza y retrato ceremonial en Fundacion.
+- Reemplaza la imagen generica de alianza por el retrato ceremonial local.
+- Genera un nuevo ZIP con estos ajustes.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.8_fundacion_imagenes.zip`
+
 ## v1.2.7 - 2026-06-29
 
 Imagen correcta en Inicio.

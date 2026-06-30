@@ -1,6 +1,6 @@
 ﻿# Sugerencias de interaccion creativa
 
-Version: v1.2.7
+Version: v1.2.8
 
 ## Implementado en la vista interactiva
 

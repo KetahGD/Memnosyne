@@ -1,12 +1,12 @@
 ﻿{
-  "version": "v1.2.7",
+  "version": "v1.2.8",
   "date": "2026-06-29",
-  "name": "Imagen correcta en Inicio",
-  "zip": "centro_cultural_v1.2.7_inicio_imagen_correcta.zip",
+  "name": "Imagenes visibles en Fundacion",
+  "zip": "centro_cultural_v1.2.8_fundacion_imagenes.zip",
   "notes": [
-    "Reemplaza la imagen principal de danza en Inicio por la fotografia correcta.",
-    "Mantiene el mismo layout del hero y la franja visual inicial.",
-    "Conserva el retrato ceremonial como segunda imagen del bloque inicial.",
+    "Coloca las imagenes locales tambien en la pagina de Fundacion.",
+    "Usa la danza ceremonial como fondo principal del hero de Fundacion.",
+    "Agrega una franja visual inicial con danza y retrato ceremonial en Fundacion.",
     "Mantiene la navegacion, paletas, modo Original/Intenso y correcciones visuales previas.",
     "Incluye los assets dentro del proyecto y del ZIP."
   ]
