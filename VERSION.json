@@ -1,15 +1,15 @@
 ﻿{
-  "version": "v1.2.10",
+  "version": "v1.2.11",
   "date": "2026-06-30",
-  "name": "Proyectos con imagen visible",
-  "zip": "centro_cultural_v1.2.10_proyectos_imagen_visible.zip",
+  "name": "Responsive y vistas final/wireframe",
+  "zip": "centro_cultural_v1.2.11_responsive_vistas.zip",
   "notes": [
-    "Agrega la imagen proporcionada al hero de Proyectos en la posicion derecha indicada.",
-    "Reemplaza la imagen generica del bloque documental de Proyectos por el asset local.",
-    "Mantiene visibles las imagenes laterales en Tolteca, Maya, Proyectos y Donativo.",
-    "Agrega cache busting a CSS y JavaScript para evitar que el navegador muestre versiones anteriores.",
-    "Mantiene la navegacion, paletas, modo Original/Intenso y correcciones visuales previas.",
-    "Incluye los assets dentro del proyecto y del ZIP."
+    "Mejora el responsive de heroes, tarjetas, tablas, matriz de ejes y modulos interactivos.",
+    "Retira las senalizaciones visibles de paleta, color y version flotante.",
+    "Conserva las paletas fijas por apartado sin selector cromatico visible.",
+    "Agrega un unico selector para alternar entre Vista final y Wireframe.",
+    "Mantiene datos e imagenes en Vista final y placeholders visuales en Wireframe.",
+    "Incluye todos los assets dentro del proyecto y del ZIP."
   ]
 }
 

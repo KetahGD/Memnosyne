@@ -201,7 +201,6 @@ function populateExistingSections() {
         setText("p", item[1], card);
       });
     }
-    setAllText(".color-strip div", ["Fundacion", "Tolteca", "Maya", "Proyectos", "Donativo"]);
     return;
   }
 

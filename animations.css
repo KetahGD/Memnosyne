@@ -940,6 +940,322 @@ body[data-axis-filter="territorio"] .card:not([data-axis="territorio"]) {
   }
 }
 
+/* v1.2.11: clean final view, optional mockup view, and stronger responsive behavior. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.palette-control,
+.palette-switcher,
+.version-badge,
+.wireframe-note,
+.color-strip,
+section:has(.palette-grid) {
+  display: none !important;
+}
+
+.view-mode-control {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 160;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  width: min(300px, calc(100vw - 24px));
+  padding: 8px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, var(--accent));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--hueso) 92%, transparent);
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--shadow) 78%, transparent);
+  backdrop-filter: blur(16px);
+  font-family: "Montserrat", "Poppins", sans-serif;
+}
+
+.view-mode-option {
+  min-height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cafe);
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.view-mode-option:hover,
+.view-mode-option:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.view-mode-option.is-active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--blanco);
+}
+
+body.final-view-mode .wireframe-lab {
+  display: none !important;
+}
+
+body.final-view-mode .wireframe-video-layer {
+  display: none;
+}
+
+body.final-view-mode .section-pad::before,
+body.final-view-mode .card::before {
+  content: none !important;
+}
+
+body.wireframe-mode .wireframe-lab {
+  display: block;
+}
+
+body.wireframe-mode .wireframe-video-layer {
+  display: none;
+}
+
+body.wireframe-mode .hero,
+body.wireframe-mode .section-hero {
+  background:
+    linear-gradient(120deg, var(--hero-dark), var(--hero-mid), var(--hero-soft)) !important;
+}
+
+body.wireframe-mode .visual {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--accent) 12%, transparent) 0 12px,
+      transparent 12px 24px
+    ),
+    color-mix(in srgb, var(--hueso) 88%, var(--accent) 12%) !important;
+}
+
+body.wireframe-mode .hero-media,
+body.wireframe-mode .home-photo-grid figure {
+  display: grid;
+  place-items: center;
+  border: 2px dashed color-mix(in srgb, var(--accent) 70%, var(--dorado));
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      color-mix(in srgb, var(--accent) 14%, transparent) 0 14px,
+      transparent 14px 28px
+    ),
+    color-mix(in srgb, var(--hueso) 90%, var(--accent) 10%);
+  box-shadow: none;
+}
+
+body.wireframe-mode .hero-media::before,
+body.wireframe-mode .home-photo-grid figure::before,
+body.wireframe-mode .visual::after {
+  content: "IMAGEN / RECURSO VISUAL";
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: calc(100% - 2rem);
+  min-height: 42px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--hueso) 92%, transparent);
+  color: var(--cafe);
+  font: 900 0.72rem/1.2 "Montserrat", "Poppins", sans-serif;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.wireframe-mode .hero-media img,
+body.wireframe-mode .home-photo-grid img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+body.wireframe-mode .visual span {
+  position: relative;
+  left: auto;
+  bottom: auto;
+}
+
+.cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.route-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.axis-filter-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+}
+
+.projects-matrix .axis-matrix-v2,
+.wf-axis-matrix {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.axis-matrix-v2 {
+  grid-template-columns: minmax(92px, 0.8fr) repeat(4, minmax(120px, 1fr));
+}
+
+.trust-table {
+  overflow-x: auto;
+}
+
+.trust-table > div {
+  min-width: 760px;
+}
+
+.has-hero-media {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.86fr);
+  min-height: clamp(560px, 70vh, 760px);
+}
+
+.has-hero-media .hero-content,
+.hero-content {
+  min-width: 0;
+}
+
+.hero-media {
+  width: 100%;
+  max-width: 620px;
+  justify-self: end;
+}
+
+h1,
+h2,
+h3,
+.btn,
+.view-mode-option {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1120px) {
+  .has-hero-media {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    min-height: auto;
+    padding-block: clamp(4.5rem, 9vw, 7rem);
+  }
+
+  .hero-media {
+    justify-self: start;
+    max-width: min(720px, 100%);
+  }
+
+  .grid-2 {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .navbar {
+    gap: 0.8rem;
+  }
+
+  .navbar nav {
+    gap: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .hero,
+  .section-hero {
+    min-height: auto;
+    padding: 4.8rem 5vw;
+  }
+
+  .hero-content p:not(.eyebrow) {
+    font-size: 0.98rem;
+  }
+
+  .timeline-track,
+  .recommendation-grid,
+  .payment-grid,
+  .impact-ladder {
+    grid-template-columns: 1fr;
+  }
+
+  .axis-matrix-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .axis-matrix-v2 > * {
+    min-height: 62px;
+  }
+
+  .wf-axis-matrix {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .view-mode-control {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+  }
+
+  .view-mode-option {
+    min-height: 40px;
+    font-size: 0.62rem;
+  }
+
+  .section-pad {
+    padding: 3.6rem 5vw;
+  }
+
+  .hero,
+  .section-hero {
+    padding: 4rem 5vw;
+  }
+
+  .hero-actions,
+  .navbar,
+  .navbar nav {
+    align-items: stretch;
+  }
+
+  .hero-actions .btn,
+  .navbar .btn {
+    width: 100%;
+  }
+
+  .hero-media,
+  .home-photo-grid figure,
+  .visual {
+    min-height: 250px;
+    border-radius: 16px;
+  }
+
+  .home-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .axis-matrix-v2,
+  .wf-axis-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-table > div {
+    min-width: 620px;
+  }
+}
+
 body.final-page-mode .wireframe-video-layer span {
   display: none;
 }

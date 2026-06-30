@@ -1,6 +1,6 @@
 ﻿# Sugerencias de interaccion creativa
 
-Version: v1.2.10
+Version: v1.2.11
 
 ## Implementado en la vista interactiva
 
@@ -15,6 +15,9 @@ Version: v1.2.10
 - Barra de progreso de scroll y count-up demostrativo en Donativo.
 - Contenido del informe integrado en todas las secciones.
 - Imagenes de fondo visibles dentro de la vista final para previsualizar una version final.
+- Selector unico para alternar entre vista final y wireframe/mockup.
+- Ajustes responsive para heroes, matriz de ejes, tablas, tarjetas y modulos de recorrido.
+- Controles de paleta y senalizaciones cromaticas ocultos para una presentacion mas limpia.
 
 ## Ideas recomendadas
 

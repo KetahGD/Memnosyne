@@ -11,7 +11,7 @@ Sitio HTML/CSS para presentar la red cultural entre Memnosyne Institute, el Cent
 - `proyectos.html`: ejes de proyectos.
 - `donativo.html`: apoyo y donativos.
 - `styles.css`: estilos, variables, paletas y responsive.
-- `palette.js`: paletas fijas por apartado.
+- `palette.js`: paletas fijas por apartado, sin selector visible de color.
 - `section-creativity.css`: motivos visuales extra por seccion.
 - `wireframe.css`: estilos historicos de maqueta conservados para referencia.
 - `wireframe.js`: carga contenido basado en el informe y activa la vista final.
@@ -20,13 +20,13 @@ Sitio HTML/CSS para presentar la red cultural entre Memnosyne Institute, el Cent
 - `interactions.js`: tarjetas expandibles, filtros, linea del tiempo, scroll reveal y modulos de organizacion por apartado.
 - `VERSION.json`: version actual.
 - `CHANGELOG.md`: historial de cambios y zips asociados.
-- `version.js`: indicador visible de version.
+- `version.js`: selector visible entre vista final y wireframe.
 - `SUGERENCIAS_INTERACCION.md`: ideas de interaccion para futuras iteraciones.
 - `assets/`: imagenes locales usadas en Inicio.
 
 ## Version
 
-La version actual es `v1.2.10`. El indicador visible se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
+La version actual es `v1.2.11`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
 
 Cada cambio nuevo debe:
 
@@ -36,22 +36,19 @@ Cada cambio nuevo debe:
 
 ## Paletas
 
-La interfaz usa paletas por apartado. Solo `Proyectos` usa Frog:
+La interfaz usa paletas fijas por apartado. No hay selector visible de paletas:
 
 - Inicio / Hero: `Sol Obsidiana`.
 - Fundacion: `Fuego Ritual`.
 - Tolteca: `Piedra Roja`.
 - Maya: `Tlashko Verde`.
 - Proyectos: Frog `#17876D`, RGB `23 135 109`, CMYK `84 25 67 8`.
-- Donativo: `Semilla Dorada` en modo Original; `Semilla Dorada + Indigo Textil` en modo Intenso.
+- Donativo: `Semilla Dorada`.
 - Footer: `Sol Obsidiana`.
 
 Para ajustar estos valores, edita `palette.js`.
 
-La interfaz incluye un control `Modo`:
-
-- `Original`: conserva las paletas base.
-- `Intenso`: aumenta saturacion y brillo sin cambiar la familia cromatica.
+La unica interfaz flotante es el selector `Vista final` / `Wireframe`.
 
 ## Distribucion
 
@@ -73,7 +70,10 @@ La version `v1.2.2` mantiene HTML, CSS y JavaScript ligero. Incluye:
 
 ## Contenido de previsualizacion
 
-La version `v1.2.10` mantiene los datos del informe y presenta imagenes ceremoniales locales en Inicio, Fundacion, Tolteca, Maya, Proyectos y Donativo, sin rotulos visibles de wireframe ni superposiciones en los controles flotantes:
+La version `v1.2.11` mantiene los datos del informe y presenta imagenes ceremoniales locales en Inicio, Fundacion, Tolteca, Maya, Proyectos y Donativo. El usuario puede alternar entre:
+
+- `Vista final`: datos, textos e imagenes visibles.
+- `Wireframe`: estructura, espacios visuales y placeholders para revisar acomodo.
 
 - Inicio: red translocal y narrativa "dos territorios, una red viva".
 - Fundacion: Memnosyne, Tolteca y U Kuuchil como ecosistema conectado.
@@ -111,9 +111,9 @@ Se cargan desde Google Fonts:
 
 Abre `index.html` directamente en el navegador. No requiere servidor ni framework.
 
-## Vista final
+## Vista final y wireframe
 
-El sitio esta actualmente en previsualizacion final. Conserva las paletas, estructura, animaciones y contenido del informe, pero ya no muestra etiquetas tecnicas de maqueta ni rotulos de wireframe.
+El sitio abre en vista final. Conserva las paletas, estructura, animaciones y contenido del informe, pero ya no muestra etiquetas tecnicas de paleta ni controles de color. El selector flotante permite revisar la misma pagina como wireframe cuando se quiera validar jerarquia, espacios de imagen y organizacion responsive.
 
 ## Contenido
 

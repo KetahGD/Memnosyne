@@ -1,4 +1,19 @@
-﻿# Changelog
+# Changelog
+
+## v1.2.11 - 2026-06-30
+
+Responsive y vistas final/wireframe.
+
+- Mejora el responsive de heroes, tarjetas, tablas, matriz de ejes y modulos interactivos.
+- Retira las senalizaciones visibles de paleta, color y version flotante.
+- Conserva las paletas fijas por apartado sin selector cromatico visible.
+- Agrega un unico selector para alternar entre Vista final y Wireframe.
+- Mantiene datos e imagenes en Vista final y placeholders visuales en Wireframe.
+- Genera un nuevo ZIP con todos los assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.11_responsive_vistas.zip`
 
 ## v1.2.10 - 2026-06-30
 

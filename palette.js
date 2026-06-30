@@ -289,82 +289,22 @@ function buildVars(scheme, section) {
   return vars;
 }
 
-function readColorMode() {
-  try {
-    return localStorage.getItem("memoria-viva-color-mode") || "original";
-  } catch {
-    return "original";
-  }
-}
-
-function saveColorMode(mode) {
-  try {
-    localStorage.setItem("memoria-viva-color-mode", mode);
-  } catch {
-    /* Color still changes when storage is unavailable. */
-  }
-}
-
 function applyPalette() {
   const section = detectSection();
   const schemeKey = sectionPalettes[section];
   const baseScheme = schemes[schemeKey];
-  const mode = readColorMode();
-  const intenseKey = intenseOverrides[section];
-  const intenseBaseScheme = intenseKey ? schemes[intenseKey] : baseScheme;
-  const scheme = mode === "intense" ? intensifyScheme(intenseBaseScheme) : baseScheme;
+  const scheme = baseScheme;
 
-  document.body.dataset.palette = mode === "intense" && intenseKey ? intenseKey : schemeKey;
-  document.body.dataset.paletteLabel =
-    mode === "intense" && intenseKey ? intenseBaseScheme.label : baseScheme.label;
-  document.body.dataset.colorMode = mode;
+  document.body.dataset.palette = schemeKey;
+  document.body.dataset.paletteLabel = baseScheme.label;
+  document.body.dataset.colorMode = "fixed";
 
   Object.entries(buildVars(scheme, section)).forEach(([name, value]) => {
     document.body.style.setProperty(name, value);
   });
 }
 
-function setColorMode(mode) {
-  saveColorMode(mode);
-  applyPalette();
-  syncColorSwitch();
-}
-
-function syncColorSwitch() {
-  const mode = document.body.dataset.colorMode;
-
-  document.querySelectorAll(".color-mode-option").forEach((button) => {
-    const active = button.dataset.colorMode === mode;
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-
-  const label = document.querySelector(".palette-control-label");
-  if (label) {
-    label.textContent = `${document.body.dataset.paletteLabel} / ${mode}`;
-  }
-}
-
-function renderColorSwitch() {
-  if (document.querySelector(".palette-control")) return;
-
-  const switcher = document.createElement("aside");
-  switcher.className = "palette-control palette-control-compact";
-  switcher.setAttribute("aria-label", "Modo de color");
-  switcher.innerHTML = `<p>Paleta</p><span class="palette-name">${document.body.dataset.paletteLabel}</span><p>Modo</p><div class="color-mode-grid">
-    <button class="color-mode-option" type="button" data-color-mode="original">Original</button>
-    <button class="color-mode-option" type="button" data-color-mode="intense">Intenso</button>
-  </div><span class="palette-control-label"></span>`;
-  document.body.appendChild(switcher);
-
-  switcher.addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-color-mode]");
-    if (!button) return;
-    setColorMode(button.dataset.colorMode);
-  });
-
-  syncColorSwitch();
-}
-
 applyPalette();
-renderColorSwitch();
+document.querySelectorAll(".palette-control, .palette-switcher").forEach((element) => {
+  element.remove();
+});
