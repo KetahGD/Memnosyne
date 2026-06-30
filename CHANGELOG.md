@@ -1,5 +1,19 @@
 ﻿# Changelog
 
+## v1.2.9 - 2026-06-29
+
+Imagenes por seccion.
+
+- Agrega imagenes locales en Tolteca, Maya y Donativo de acuerdo con las capturas de referencia.
+- Incorpora imagen lateral visible en los heroes de Tolteca, Maya y Donativo.
+- Sustituye imagenes externas genericas por assets locales en los bloques de resumen y apoyo.
+- Agrega estilos responsivos para que las imagenes laterales no invadan el texto.
+- Genera un nuevo ZIP con todos los assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.9_imagenes_por_seccion.zip`
+
 ## v1.2.8 - 2026-06-29
 
 Imagenes visibles en Fundacion.

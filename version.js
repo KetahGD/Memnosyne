@@ -1,6 +1,6 @@
 const siteVersion = {
-  version: "v1.2.8",
-  label: "Fundacion imagenes",
+  version: "v1.2.9",
+  label: "Imagenes por seccion",
 };
 
 function renderVersionBadge() {
