@@ -118,6 +118,87 @@ const intenseOverrides = {
   donativo: "semillaDoradaGlobal",
 };
 
+const paletteSystemStorageKey = "memoria-viva-palette-system";
+
+const paletteSystems = {
+  actual: {
+    label: "Paleta actual",
+    note: "Colores vigentes por apartado",
+  },
+  raizTerritorial: {
+    label: "01 Raiz Territorial",
+    note: "Recomendada: tierra, cenote, jade y maiz",
+    sections: {
+      home: ["Fundacion", "#17110D", "#355070"],
+      fundacion: ["Fundacion", "#17110D", "#355070"],
+      tolteca: ["Tolteca", "#A65F2B", "#D6A646"],
+      maya: ["Maya", "#0B7285", "#14B8A6"],
+      proyectos: ["Proyectos", "#17876D", "#00A896"],
+      donativo: ["Donacion", "#D6A646", "#F72585"],
+    },
+  },
+  nocheTextil: {
+    label: "02 Noche Textil",
+    note: "Vibrante: indigo, tezontle, azul y rosa",
+    sections: {
+      home: ["Fundacion", "#3D348B", "#E9B44C"],
+      fundacion: ["Fundacion", "#3D348B", "#E9B44C"],
+      tolteca: ["Tolteca", "#C84B28", "#FFB703"],
+      maya: ["Maya", "#0077B6", "#00B4D8"],
+      proyectos: ["Proyectos", "#00A878", "#3A86FF"],
+      donativo: ["Donacion", "#FF006E", "#FFBE0B"],
+    },
+  },
+  nopalPenacho: {
+    label: "03 Nopal y Penacho",
+    note: "Mexicano fuerte: sobrio, verde y azul dinamico",
+    sections: {
+      home: ["Fundacion", "#061826", "#F9C74F"],
+      fundacion: ["Fundacion", "#061826", "#F9C74F"],
+      tolteca: ["Tolteca", "#8A4B2A", "#E76F35"],
+      maya: ["Maya", "#052E2B", "#2DD4BF"],
+      proyectos: ["Proyectos", "#0057B8", "#00A878"],
+      donativo: ["Donacion", "#CE1126", "#F72585"],
+    },
+  },
+  piedraCenote: {
+    label: "04 Piedra y Cenote",
+    note: "Mas institucional: piedra, cenote y semilla",
+    sections: {
+      home: ["Fundacion", "#2B1A12", "#0B7285"],
+      fundacion: ["Fundacion", "#2B1A12", "#0B7285"],
+      tolteca: ["Tolteca", "#A63A2D", "#D38A2E"],
+      maya: ["Maya", "#073B4C", "#88D498"],
+      proyectos: ["Proyectos", "#2D6A4F", "#1B998B"],
+      donativo: ["Donacion", "#F4D35E", "#C84B28"],
+    },
+  },
+  festivalVivo: {
+    label: "05 Festival Vivo",
+    note: "Joven y creativa: turquesa, rosa y azul",
+    sections: {
+      home: ["Fundacion", "#120A22", "#FFBE0B"],
+      fundacion: ["Fundacion", "#120A22", "#FFBE0B"],
+      tolteca: ["Tolteca", "#E76F35", "#FFB703"],
+      maya: ["Maya", "#14B8A6", "#B7D36B"],
+      proyectos: ["Proyectos", "#3A86FF", "#00A878"],
+      donativo: ["Donacion", "#FF477E", "#F4D35E"],
+    },
+  },
+  archivoCeremonial: {
+    label: "06 Archivo Ceremonial",
+    note: "Sobria con acentos: archivo, adobe y ceiba",
+    sections: {
+      home: ["Fundacion", "#10151F", "#D6A646"],
+      fundacion: ["Fundacion", "#10151F", "#D6A646"],
+      tolteca: ["Tolteca", "#6D3B1F", "#E98D36"],
+      maya: ["Maya", "#096B5E", "#2DD4BF"],
+      proyectos: ["Proyectos", "#004E89", "#88D498"],
+      donativo: ["Donacion", "#B83B22", "#F2C166"],
+    },
+  },
+};
+
 function rgba(hex, alpha) {
   const clean = hex.replace("#", "");
   const value = Number.parseInt(clean, 16);
@@ -217,6 +298,68 @@ function intensifyScheme(scheme) {
   };
 }
 
+function clampChannel(value) {
+  return Math.max(0, Math.min(255, Math.round(value)));
+}
+
+function hexToRgb(hex) {
+  const clean = hex.replace("#", "");
+  const value = Number.parseInt(clean, 16);
+  return {
+    red: (value >> 16) & 255,
+    green: (value >> 8) & 255,
+    blue: value & 255,
+  };
+}
+
+function rgbToHex({ red, green, blue }) {
+  return `#${[red, green, blue]
+    .map((channel) => clampChannel(channel).toString(16).padStart(2, "0"))
+    .join("")
+    .toUpperCase()}`;
+}
+
+function mix(hexA, hexB, weight = 0.5) {
+  const a = hexToRgb(hexA);
+  const b = hexToRgb(hexB);
+  return rgbToHex({
+    red: a.red * (1 - weight) + b.red * weight,
+    green: a.green * (1 - weight) + b.green * weight,
+    blue: a.blue * (1 - weight) + b.blue * weight,
+  });
+}
+
+function readableTextFor(hex) {
+  return hexToHsl(hex).lightness < 0.48 ? "#FFF8EA" : "#211812";
+}
+
+function buildGeneratedScheme(label, primary, secondary, section) {
+  const darkPrimary = hexToHsl(primary).lightness < 0.4;
+  const bg = darkPrimary ? mix(primary, "#110A07", 0.4) : mix(primary, "#FFF3D6", 0.78);
+  const panel = darkPrimary ? mix(primary, "#FFF8EA", 0.16) : mix(primary, "#FFF8EA", 0.88);
+  const ink = darkPrimary ? "#090706" : mix(primary, "#1A100A", 0.12);
+  const text = darkPrimary ? "#FFF3D6" : "#2B1A12";
+  const hot =
+    section === "donativo"
+      ? primary
+      : section === "maya"
+        ? mix(secondary, "#00B4D8", 0.35)
+        : mix(primary, "#FF006E", 0.22);
+
+  return {
+    label,
+    bg,
+    panel,
+    ink,
+    text,
+    primary,
+    secondary,
+    hot,
+    gold: secondary,
+    stone: mix(primary, secondary, 0.52),
+  };
+}
+
 function detectSection() {
   const match = sectionMap.find(([, className]) =>
     document.body.classList.contains(className)
@@ -291,20 +434,88 @@ function buildVars(scheme, section) {
 
 function applyPalette() {
   const section = detectSection();
+  const systemKey = readPaletteSystem();
+  const paletteSystem = paletteSystems[systemKey] || paletteSystems.actual;
+  const systemSection = paletteSystem.sections?.[section];
   const schemeKey = sectionPalettes[section];
   const baseScheme = schemes[schemeKey];
-  const scheme = baseScheme;
+  const scheme = systemSection
+    ? buildGeneratedScheme(systemSection[0], systemSection[1], systemSection[2], section)
+    : baseScheme;
 
-  document.body.dataset.palette = schemeKey;
-  document.body.dataset.paletteLabel = baseScheme.label;
+  document.body.dataset.palette = systemSection ? systemKey : schemeKey;
+  document.body.dataset.paletteSystem = systemKey;
+  document.body.dataset.paletteLabel = systemSection
+    ? `${paletteSystem.label} / ${systemSection[0]}`
+    : baseScheme.label;
   document.body.dataset.colorMode = "fixed";
 
   Object.entries(buildVars(scheme, section)).forEach(([name, value]) => {
+    document.documentElement.style.setProperty(name, value);
     document.body.style.setProperty(name, value);
+  });
+
+  syncPaletteSystemControl();
+}
+
+function readPaletteSystem() {
+  try {
+    return localStorage.getItem(paletteSystemStorageKey) || "actual";
+  } catch {
+    return "actual";
+  }
+}
+
+function savePaletteSystem(key) {
+  try {
+    localStorage.setItem(paletteSystemStorageKey, key);
+  } catch {
+    /* The palette still changes when storage is unavailable. */
+  }
+}
+
+function setPaletteSystem(key) {
+  const normalizedKey = paletteSystems[key] ? key : "actual";
+  savePaletteSystem(normalizedKey);
+  applyPalette();
+}
+
+function syncPaletteSystemControl() {
+  const select = document.querySelector(".palette-system-select");
+  if (select) select.value = document.body.dataset.paletteSystem || "actual";
+
+  const label = document.querySelector(".palette-system-current");
+  if (label) label.textContent = document.body.dataset.paletteLabel || "Paleta actual";
+
+  const note = document.querySelector(".palette-system-note");
+  const paletteSystem = paletteSystems[document.body.dataset.paletteSystem] || paletteSystems.actual;
+  if (note) note.textContent = paletteSystem.note;
+}
+
+function renderPaletteSystemControl() {
+  if (document.querySelector(".palette-system-control")) return;
+
+  const control = document.createElement("aside");
+  control.className = "palette-system-control";
+  control.setAttribute("aria-label", "Selector de paletas por seccion");
+  control.innerHTML = `<label for="paletteSystemSelect">Paleta</label>
+    <select id="paletteSystemSelect" class="palette-system-select">
+      ${Object.entries(paletteSystems)
+        .map(([key, system]) => `<option value="${key}">${system.label}</option>`)
+        .join("")}
+    </select>
+    <span class="palette-system-current"></span>
+    <small class="palette-system-note"></small>`;
+  document.body.appendChild(control);
+
+  control.querySelector("select").addEventListener("change", (event) => {
+    setPaletteSystem(event.target.value);
   });
 }
 
 applyPalette();
+renderPaletteSystemControl();
+syncPaletteSystemControl();
 document.querySelectorAll(".palette-control, .palette-switcher").forEach((element) => {
   element.remove();
 });

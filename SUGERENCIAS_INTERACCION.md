@@ -1,6 +1,6 @@
 # Sugerencias de interaccion creativa
 
-Version: v1.2.13
+Version: v1.2.14
 
 ## Implementado en la vista interactiva
 
@@ -16,6 +16,7 @@ Version: v1.2.13
 - Contenido del informe integrado en todas las secciones.
 - Imagenes de fondo visibles dentro de la vista final para previsualizar una version final.
 - Selector unico para alternar entre vista final y wireframe/mockup.
+- Selector de paletas para probar la paleta actual y seis sistemas cromaticos por seccion.
 - Ajustes responsive para heroes, matriz de ejes, tablas, tarjetas y modulos de recorrido.
 - Controles de paleta y senalizaciones cromaticas ocultos para una presentacion mas limpia.
 

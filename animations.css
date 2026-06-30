@@ -1003,6 +1003,59 @@ section:has(.palette-grid) {
   color: var(--blanco);
 }
 
+.palette-system-control {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 160;
+  display: grid;
+  gap: 6px;
+  width: min(330px, calc(100vw - 24px));
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, var(--accent));
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--hueso) 94%, transparent);
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--shadow) 78%, transparent);
+  backdrop-filter: blur(16px);
+  color: var(--cafe);
+  font-family: "Montserrat", "Poppins", sans-serif;
+}
+
+.palette-system-control label {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.palette-system-select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 2.4rem 0 0.9rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--hueso) 94%, white), color-mix(in srgb, var(--accent2) 10%, var(--hueso))),
+    var(--hueso);
+  color: var(--cafe);
+  font: 900 0.78rem/1.2 "Montserrat", "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.palette-system-current {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.palette-system-note {
+  color: color-mix(in srgb, var(--cafe) 78%, transparent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 body.final-view-mode .wireframe-lab {
   display: none !important;
 }
@@ -1207,6 +1260,13 @@ h3,
     left: 10px;
     right: 10px;
     bottom: 10px;
+    width: auto;
+  }
+
+  .palette-system-control {
+    left: 10px;
+    right: 10px;
+    bottom: 66px;
     width: auto;
   }
 

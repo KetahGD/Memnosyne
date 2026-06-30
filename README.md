@@ -27,7 +27,7 @@ Sitio HTML/CSS para presentar Memnosyne Mexico como red cultural entre Memnosyne
 
 ## Version
 
-La version actual es `v1.2.13`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
+La version actual es `v1.2.14`. El selector de vista se genera desde `version.js` y el registro formal vive en `VERSION.json` y `CHANGELOG.md`.
 
 Cada cambio nuevo debe:
 
@@ -37,7 +37,7 @@ Cada cambio nuevo debe:
 
 ## Paletas
 
-La interfaz usa paletas fijas por apartado. No hay selector visible de paletas:
+La interfaz usa paletas por apartado y ahora permite probar la paleta actual mas seis sistemas cromaticos desde un selector visible:
 
 - Inicio / Hero: `Sol Obsidiana`.
 - Fundacion: `Fuego Ritual`.
@@ -47,9 +47,9 @@ La interfaz usa paletas fijas por apartado. No hay selector visible de paletas:
 - Donativo: `Semilla Dorada`.
 - Footer: `Sol Obsidiana`.
 
-Para ajustar estos valores, edita `palette.js`.
+Los sistemas de prueba agregados son `Raiz Territorial`, `Noche Textil`, `Nopal y Penacho`, `Piedra y Cenote`, `Festival Vivo` y `Archivo Ceremonial`. Para ajustar estos valores, edita `palette.js`.
 
-La unica interfaz flotante es el selector `Vista final` / `Wireframe`.
+La interfaz flotante incluye el selector `Vista final` / `Wireframe` y un selector de paletas por seccion con la paleta actual mas seis sistemas cromaticos.
 
 ## Distribucion
 

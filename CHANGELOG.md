@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.2.14 - 2026-06-30
+
+Selector de paletas por seccion.
+
+- Agrega selector de paletas visible a la pagina principal y subpaginas.
+- Incluye la paleta actual y seis sistemas completos: Raiz Territorial, Noche Textil, Nopal y Penacho, Piedra y Cenote, Festival Vivo y Archivo Ceremonial.
+- Cada sistema aplica colores especificos para Fundacion, Tolteca, Maya, Proyectos y Donacion.
+- Mantiene separado el selector Vista final / Wireframe.
+- Aplica criterios culturales: Tolteca tierra seca/ocre/fuego, Maya cenote/selva/jade, Fundacion puente institucional, Proyectos accion territorial y Donacion CTA vivo.
+- Actualiza cache busting a `v1.2.14`.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.14_selector_paletas.zip`
 ## v1.2.13 - 2026-06-30
 
 Documentacion del proyecto.

@@ -1,6 +1,6 @@
 const siteVersion = {
-  version: "v1.2.13",
-  label: "Documentacion del proyecto",
+  version: "v1.2.14",
+  label: "Selector de paletas",
 };
 
 const viewModeStorageKey = "memoria-viva-view-mode";

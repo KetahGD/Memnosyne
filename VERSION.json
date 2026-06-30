@@ -1,14 +1,15 @@
 {
-  "version": "v1.2.13",
+  "version": "v1.2.14",
   "date": "2026-06-30",
-  "name": "Documentacion del proyecto",
-  "zip": "centro_cultural_v1.2.13_documentacion_proyecto.zip",
+  "name": "Selector de paletas por seccion",
+  "zip": "centro_cultural_v1.2.14_selector_paletas.zip",
   "notes": [
-    "Agrega DOCUMENTACION_PROYECTO_MEMNOSYNE_MEXICO.md.",
-    "Resume layout, versiones, recursos, imagenes, tipografias, roles y operacion.",
-    "Documenta hosting, dominio, mantenimiento, administracion y versionamiento con Git/GitHub.",
-    "Actualiza cache busting a v1.2.13.",
-    "Incluye todos los assets y la documentacion dentro del ZIP."
+    "Agrega selector de paletas a la pagina principal y subpaginas.",
+    "Incluye la paleta actual y seis sistemas completos para Fundacion, Tolteca, Maya, Proyectos y Donacion.",
+    "Mantiene separado el selector Vista final / Wireframe.",
+    "Aplica criterios de territorio seco para Tolteca, cenote/selva para Maya, puente institucional para Fundacion, accion para Proyectos y CTA vivo para Donacion.",
+    "Actualiza cache busting a v1.2.14.",
+    "Incluye todos los assets dentro del ZIP."
   ]
 }
 
