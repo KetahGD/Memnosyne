@@ -1,5 +1,19 @@
 ﻿# Changelog
 
+## v1.2.10 - 2026-06-30
+
+Proyectos con imagen visible.
+
+- Agrega la imagen proporcionada al hero de Proyectos en la posicion derecha indicada.
+- Reemplaza la imagen generica del bloque documental de Proyectos por el asset local.
+- Mantiene visibles las imagenes laterales en Tolteca, Maya, Proyectos y Donativo.
+- Agrega cache busting a CSS y JavaScript para evitar que el navegador muestre versiones anteriores.
+- Genera un nuevo ZIP con todos los assets incluidos.
+
+Archivo comprimido asociado:
+
+- `centro_cultural_v1.2.10_proyectos_imagen_visible.zip`
+
 ## v1.2.9 - 2026-06-29
 
 Imagenes por seccion.

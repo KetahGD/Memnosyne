@@ -1,12 +1,13 @@
 ﻿{
-  "version": "v1.2.9",
-  "date": "2026-06-29",
-  "name": "Imagenes por seccion",
-  "zip": "centro_cultural_v1.2.9_imagenes_por_seccion.zip",
+  "version": "v1.2.10",
+  "date": "2026-06-30",
+  "name": "Proyectos con imagen visible",
+  "zip": "centro_cultural_v1.2.10_proyectos_imagen_visible.zip",
   "notes": [
-    "Agrega imagenes locales en Tolteca, Maya y Donativo segun las capturas de referencia.",
-    "Incorpora imagen lateral visible en los heroes de Tolteca, Maya y Donativo.",
-    "Reemplaza imagenes externas genericas por assets locales en bloques de resumen y apoyo.",
+    "Agrega la imagen proporcionada al hero de Proyectos en la posicion derecha indicada.",
+    "Reemplaza la imagen generica del bloque documental de Proyectos por el asset local.",
+    "Mantiene visibles las imagenes laterales en Tolteca, Maya, Proyectos y Donativo.",
+    "Agrega cache busting a CSS y JavaScript para evitar que el navegador muestre versiones anteriores.",
     "Mantiene la navegacion, paletas, modo Original/Intenso y correcciones visuales previas.",
     "Incluye los assets dentro del proyecto y del ZIP."
   ]
